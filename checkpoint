@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/yuchen/study/Course/EECS349/project/dogsvscats-1e-05-2conv-basic.model"
+all_model_checkpoint_paths: "/home/yuchen/study/Course/EECS349/project/dogsvscats-1e-05-2conv-basic.model"

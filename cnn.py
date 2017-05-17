@@ -9,8 +9,8 @@ from tflearn.layers.conv import conv_2d, max_pool_2d
 from tflearn.layers.core import input_data, dropout, fully_connected
 from tflearn.layers.estimator import regression
 
-LAYER_SIZE = 10  # change number to get more layers
-LR = 1e-3       # learning rate
+LAYER_SIZE = 2  # change number to get more layers
+LR = 1e-5       # learning rate
 MODEL_NAME = 'dogsvscats-{}-{}.model'.format(LR, '2conv-basic')
 
 # Get labels
@@ -51,21 +51,21 @@ def create_train_data():
         name = filename.split("_")
         label = get_label(name[0])
         input_img = cv2.imread(filename,cv2.IMREAD_GRAYSCALE)
-        img = cv2.resize(input_img, (600, 800))
+        img = cv2.resize(input_img, (50, 50))
         training_data.append([np.array(img),np.array(label)])
     shuffle(training_data)
 
     return training_data
 
 def create_model():
-    convnet = input_data(shape=[None, 600, 800, 1], name='input')
+    convnet = input_data(shape=[None, 50, 50, 1], name='input')
 
     for i in range(LAYER_SIZE):
-        convnet = conv_2d(convnet, 32, 5, activation='relu')
+        convnet = conv_2d(convnet, 128, 5, activation='relu')
         convnet = max_pool_2d(convnet, 5)
 
     convnet = fully_connected(convnet, 1024, activation='relu')
-    convnet = dropout(convnet, 0.8)
+    convnet = dropout(convnet, 0.5)
 
     convnet = fully_connected(convnet, 13, activation='softmax')
     convnet = regression(convnet, optimizer='adam', learning_rate=LR, loss='categorical_crossentropy', name='targets')
@@ -79,17 +79,17 @@ def main():
     model = create_model()
 
     # prepare data
-    train = train_data[:-110]
-    test = train_data[-110:]
+    train = train_data[:-300]
+    test = train_data[-300:]
 
-    X = np.array([i[0] for i in train]).reshape(-1,600,800,1)
+    X = np.array([i[0] for i in train]).reshape(-1,50,50,1)
     Y = [i[1] for i in train]
 
-    test_x = np.array([i[0] for i in test]).reshape(-1,600,800,1)
+    test_x = np.array([i[0] for i in test]).reshape(-1,50,50,1)
     test_y = [i[1] for i in test]
 
     # fit model
-    model.fit({'input': X}, {'targets': Y}, n_epoch=10, validation_set=({'input': test_x}, {'targets': test_y}),
+    model.fit({'input': X}, {'targets': Y}, n_epoch=100, validation_set=({'input': test_x}, {'targets': test_y}),
         snapshot_step=500, show_metric=True, run_id=MODEL_NAME)
 
     model.save(MODEL_NAME)
