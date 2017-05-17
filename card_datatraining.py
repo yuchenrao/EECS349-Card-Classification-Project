@@ -15,8 +15,7 @@ from sklearn.preprocessing import StandardScaler
 # different machine learning algrithom
 svc_1 = SVC(kernel='linear', decision_function_shape='ovo')
 knn = neighbors.KNeighborsClassifier(n_neighbors=5)
-# cnn = MLPClassifier(hidden_layer_sizes=(2,), random_state=1, max_iter=1)
-cnn = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(15,), random_state=1)
+nn = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(15,), random_state=1)
 
 # Get labels
 def getlabel(name):
@@ -135,8 +134,8 @@ def main():
     train_data = scaler.transform(train_data)
     test_data = scaler.transform(test_data)
 
-    evaluate_cross_validation(cnn, train_data, train_labels, 10)
-    train_and_evaluate(cnn, train_data, test_data, train_labels, test_labels)
+    evaluate_cross_validation(nn, train_data, train_labels, 10)
+    train_and_evaluate(nn, train_data, test_data, train_labels, test_labels)
 
 if __name__ == "__main__":
     main()
