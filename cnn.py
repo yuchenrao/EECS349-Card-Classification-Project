@@ -109,10 +109,8 @@ def get_value(label):
         value = "10"
     elif label == 11:
         value = "Jack"
-        print value
     elif label == 12:
         value = "Queen"
-        print value
     elif label == 13:
         value = "King"
 
