@@ -4,10 +4,12 @@ from os import listdir
 from random import randint
 
 def transMat():
-    return np.float32([[1,0,randint(-10,10)],[0,1,randint(-5,5)]])
+    x = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    y = [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]
+    return np.float32([[1,0,x[randint(0,19)]],[0,1,y[randint(0,9)]]])
 
 def rotMat():
-    return cv2.getRotationMatrix2D((40,30),randint(0,360),1)
+    return cv2.getRotationMatrix2D((40,30),randint(30,360),1)
 
 directory = "test_data"
 result = "test_result"
@@ -17,33 +19,36 @@ imageNameList = listdir(directory)
 
 for fn in imageNameList:
     print fn
+    format = fn.split('.')
+    print format
+    name = format[0]
     img = cv2.imread(directory + "/" + fn)
     res = cv2.resize(img, (80, 60), interpolation=cv2.INTER_AREA)  # original resized
-    cv2.imwrite(result + "/" + fn + "_original", res)
+    cv2.imwrite(result + "/" + name + "_original.jpg", res)
 
     compress = cv2.resize(img, (50, 90), interpolation=cv2.INTER_AREA)  # compressed
-    cv2.imwrite(result + "/" + fn + "_compress", compress)
+    cv2.imwrite(result + "/" + name + "_compress.jpg", compress)
     stretch = cv2.resize(img, (90, 50), interpolation=cv2.INTER_AREA)  # stretched
-    cv2.imwrite(result + "/" + fn + "_stretch", stretch)
+    cv2.imwrite(result + "/" + name + "_stretch.jpg", stretch)
 
     crop = res[5:55, 10:70]  # cropped image for zooming in
     zoom = cv2.resize(crop, (80, 60),
                       interpolation=cv2.INTER_AREA)  # scaled cropped image to original size to simulate zooming
-    cv2.imwrite(result + "/" + fn + "_zoom", zoom)
+    cv2.imwrite(result + "/" + name + "_zoom.jpg", zoom)
 
     trans1 = cv2.warpAffine(res, transMat(), (80, 60))
-    cv2.imwrite(result + "/" + fn + "_trans1", trans1)
+    cv2.imwrite(result + "/" + name + "_trans1.jpg", trans1)
     trans2 = cv2.warpAffine(res, transMat(), (80, 60))
-    cv2.imwrite(result + "/" + fn + "_trans2", trans2)
+    cv2.imwrite(result + "/" + name + "_trans2.jpg", trans2)
     trans3 = cv2.warpAffine(res, transMat(), (80, 60))
-    cv2.imwrite(result + "/" + fn + "_trans3", trans3)
+    cv2.imwrite(result + "/" + name + "_trans3.jpg", trans3)
     trans4 = cv2.warpAffine(res, transMat(), (80, 60))
-    cv2.imwrite(result + "/" + fn + "_trans4", trans4)
+    cv2.imwrite(result + "/" + name + "_trans4.jpg", trans4)
 
     rot1 = cv2.warpAffine(res, rotMat(), (80, 60))
-    cv2.imwrite(result + "/" + fn + "_rot1", rot1)
+    cv2.imwrite(result + "/" + name + "_rot1.jpg", rot1)
     rot2 = cv2.warpAffine(res, rotMat(), (80, 60))
-    cv2.imwrite(result + "/" + fn + "_rot2", rot2)
+    cv2.imwrite(result + "/" + name + "_rot2.jpg", rot2)
 
 
 # img = cv2.imread(one_image)
