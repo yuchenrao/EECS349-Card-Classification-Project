@@ -16,7 +16,8 @@ one_image = "test_data/3_club_1.jpg"
 imageNameList = listdir(directory)
 
 for fn in imageNameList:
-    img = cv2.imread(one_image)
+    print fn
+    img = cv2.imread(directory + "/" + fn)
     res = cv2.resize(img, (80, 60), interpolation=cv2.INTER_AREA)  # original resized
     cv2.imwrite(result + "/" + fn + "_original", res)
 
