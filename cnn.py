@@ -12,7 +12,7 @@ from tflearn.layers.estimator import regression
 
 LAYER_SIZE = 2  # change number to get more layers
 LR = 1e-5       # learning rate
-MODEL_NAME = 'dogsvscats-{}-{}.model'.format(LR, '2conv-basic')
+MODEL_NAME = 'card_detection-{}-{}.model'.format(LR, '2conv-basic')
 
 # Get labels
 def get_label(name):
@@ -52,7 +52,7 @@ def create_train_data():
         name = filename.split("_")
         label = get_label(name[0])
         input_img = cv2.imread(filename,cv2.IMREAD_GRAYSCALE)
-        img = cv2.resize(input_img, (50, 50))
+        img = cv2.resize(input_img, (50, 50), interpolation = cv2.INTER_AREA)
         training_data.append([np.array(img),np.array(label)])
     shuffle(training_data)
 
@@ -125,26 +125,26 @@ def main():
 
     # training model
     #  prepare data
-    # train = train_data[:-300]
-    # test = train_data[-300:]
+    train = train_data[:-3000]
+    test = train_data[-3000:]
 
-    # X = np.array([i[0] for i in train]).reshape(-1,50,50,1)
-    # Y = [i[1] for i in train]
+    X = np.array([i[0] for i in train]).reshape(-1,50,50,1)
+    Y = [i[1] for i in train]
 
-    # test_x = np.array([i[0] for i in test]).reshape(-1,50,50,1)
-    # test_y = [i[1] for i in test]
+    test_x = np.array([i[0] for i in test]).reshape(-1,50,50,1)
+    test_y = [i[1] for i in test]
 
-    # # # fit model
-    # model.fit({'input': X}, {'targets': Y}, n_epoch=100, validation_set=({'input': test_x}, {'targets': test_y}),
-    #     snapshot_step=500, show_metric=True, run_id=MODEL_NAME)
+    # # fit model
+    model.fit({'input': X}, {'targets': Y}, n_epoch=100, validation_set=({'input': test_x}, {'targets': test_y}),
+        snapshot_step=500, show_metric=True, run_id=MODEL_NAME)
 
-    # model.save(MODEL_NAME)
+    model.save(MODEL_NAME)
 
     # loading model when we have model
-    model.load(MODEL_NAME)
+    # model.load(MODEL_NAME)
 
     # detect lively
-    video_capture = cv2.VideoCapture(0)
+    video_capture = cv2.VideoCapture(1)
     while 1:
         # Capture frame-by-frame
         ret, frame = video_capture.read()
