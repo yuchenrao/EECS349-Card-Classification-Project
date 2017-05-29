@@ -11,24 +11,26 @@ def transMat():
 def rotMat():
     return cv2.getRotationMatrix2D((40,30),randint(30,360),1)
 
-directory = "test_data"
-result = "test_result"
-one_image = "test_data/3_club_1.jpg"
+# directory = "test_data"
+directory = "data"
+result = "aug_data"
+# one_image = "test_data/3_club_1.jpg"
 # one_image = "data/6_heart_19.jpg"
 imageNameList = listdir(directory)
 
 for fn in imageNameList:
     print fn
     format = fn.split('.')
-    print format
     name = format[0]
     img = cv2.imread(directory + "/" + fn)
     res = cv2.resize(img, (80, 60), interpolation=cv2.INTER_AREA)  # original resized
     cv2.imwrite(result + "/" + name + "_original.jpg", res)
 
-    compress = cv2.resize(img, (50, 90), interpolation=cv2.INTER_AREA)  # compressed
+    # compress = cv2.resize(img, (50, 90), interpolation=cv2.INTER_AREA)  # compressed
+    compress = res[5:55, 0:80]
     cv2.imwrite(result + "/" + name + "_compress.jpg", compress)
-    stretch = cv2.resize(img, (90, 50), interpolation=cv2.INTER_AREA)  # stretched
+    # stretch = cv2.resize(img, (90, 50), interpolation=cv2.INTER_AREA)  # stretched
+    stretch = res[0:60, 10:70]
     cv2.imwrite(result + "/" + name + "_stretch.jpg", stretch)
 
     crop = res[5:55, 10:70]  # cropped image for zooming in
@@ -47,9 +49,10 @@ for fn in imageNameList:
 
     rot1 = cv2.warpAffine(res, rotMat(), (80, 60))
     cv2.imwrite(result + "/" + name + "_rot1.jpg", rot1)
+
+
     rot2 = cv2.warpAffine(res, rotMat(), (80, 60))
     cv2.imwrite(result + "/" + name + "_rot2.jpg", rot2)
-
 
 # img = cv2.imread(one_image)
 # res = cv2.resize(img, (80,60), interpolation=cv2.INTER_AREA) # original resized
