@@ -22,7 +22,7 @@ Blackjack, also known as twenty-one, is the most widely played casino banking ga
 
 The dataset contains 10400 images of one decks of 52 cards (Ace = 1, 2 ~ 10, Jack = 11, Queen = 12, and King = 13). We obtained the images by taking pictures of each card with an outer camera fixed at a constant height and labeled them by changing file name. Each card has 20 pictures with the same background in different orientation. Then with data augmentation, we were able to add small translation, rotation and scaling to expand the dataset to 200 pictures for each card.
 
-![image of getting dataset](https://github.com/yuchenrao/EECS349-Card-Classification-Project/blob/master/images/image2.JPG)
+![image of getting dataset](/images/image2.JPG)
 
 There are two ways to extract features in the project. The first one is to use a computer vision (CV) algorithm called Dense SIFT (DSIFT) (http://docs.opencv.org/trunk/da/df5/tutorial_py_sift_intro.html) to extract the features that the model will train on for sckit-learn algorithms. The other is to preprocess the images with edge detection to use edge information of the cards as features.
 After test of each feature, DSIFT is chosen.
@@ -32,7 +32,7 @@ and Convolutional Neural Net algorithm from tflearn packages. 10-fold cross vali
 
 ### Results
 
-![image of card recognition](https://github.com/yuchenrao/EECS349-Card-Classification-Project/blob/master/images/Image3.JPG)
+![image of card recognition](/images/Image3.JPG)
 
 iii. Describe the key results (how well your solution performed in no more than
 a paragraph, along with your key findings, e.g. which learners performed
