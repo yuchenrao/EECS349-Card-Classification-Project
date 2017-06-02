@@ -12,7 +12,7 @@ Weiyuan Deng <weiyuandeng2017@u.northwestern.edu>
 
 ### Objective and Introduction
 
-The objective of the card classification project is to interpret and classify cards for a game of Blackjack. The camera detects the cards  and the computer has an algorithm to classify them in real time while playing. The computer will be able to decide if the player should add more cards or stop.
+The objective of the card classification project is to interpret and classify cards for a game of Blackjack. The camera detects the cards  and the computer has an algorithm to classify them in real time while playing.
 
 Blackjack, also known as twenty-one, is the most widely played casino banking game in the world. It is a comparing card game between a player and dealer, and it is played with one or more decks of 52 cards. It is interesting that we apply computer vision with machine learning on the popular gambling game and be able to do the object detection and recognition.
 
