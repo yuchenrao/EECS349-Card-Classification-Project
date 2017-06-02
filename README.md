@@ -1,13 +1,13 @@
 # Black Jack Buddy
 ## EECS 349 Machine Learning at Northwestern University
 
-**Group Members and Contact:** 
+**Group Members' Github and Contact:** 
 
-Elton Cheng <eltoncheng2017@u.northwestern.edu>
+[Elton Cheng](https://github.com/echeng22) <eltoncheng2017@u.northwestern.edu>
 
-Yuchen Rao <yuchenrao2017@u.northwestern.edu>
+[Yuchen Rao](https://github.com/yuchenrao) <yuchenrao2017@u.northwestern.edu>
 
-Weiyuan Deng <weiyuandeng2017@u.northwestern.edu>
+[Weiyuan Deng](https://github.com/WeiyuanDeng) <weiyuandeng2017@u.northwestern.edu>
 
 
 ### Objective and Introduction
