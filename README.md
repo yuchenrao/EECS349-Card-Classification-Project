@@ -46,5 +46,5 @@ The accuracy of the model is around 97%, which is promising. Since the card "9" 
 Here is a demo video of our final model.
 
 <div align="center">
-    <video align="center" src="https://github.com/yuchenrao/EECS349-Card-Classification-Project/blob/master/demo/IMG_3314.mp4" poster="/images/image5.JPG" width="600" height="400" controls preload></video>
+    <video align="center" src="/demo/IMG_3314.mp4" poster="/images/image5.JPG" width="600" height="400" controls preload></video>
 </div>
