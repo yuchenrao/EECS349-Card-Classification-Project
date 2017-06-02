@@ -28,7 +28,7 @@ We obtained the images by taking pictures of each card with an outer camera fixe
 ![image of getting dataset](/images/image2.JPG)
 *Figure 2. The camera was fixed at a constant heigh and took pictures of every card.*
 
-There are two ways to extract features in the project. The first one is to use a computer vision (CV) algorithm called Dense SIFT (DSIFT) (http://docs.opencv.org/trunk/da/df5/tutorial_py_sift_intro.html) to extract the features that the model will train on for sckit-learn algorithms. The other is to preprocess the images with edge detection to use edge information of the cards as features.
+There are two ways to extract features in the project. The first one is to use a computer vision (CV) algorithm called [Dense SIFT (DSIFT)](http://docs.opencv.org/trunk/da/df5/tutorial_py_sift_intro.html) to extract the features that the model will train on for sckit-learn algorithms. The other is to preprocess the images with edge detection to use edge information of the cards as features.
 After test of each feature, DSIFT is chosen.
 
 The learners used in the project are 5-Nearest Neighbor, Support Vector Machine, Neural Net algorithm with 15 layers from Scikit-Learn
