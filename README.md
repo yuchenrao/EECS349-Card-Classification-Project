@@ -32,7 +32,7 @@ and Convolutional Neural Net algorithm from tflearn packages. 10-fold cross vali
 
 ### Results
 
-![image of card recognition](https://github.com/yuchenrao/EECS349-Card-Classification-Project/blob/master/images/image2.JPG)
+![image of card recognition](https://github.com/yuchenrao/EECS349-Card-Classification-Project/blob/master/images/Image3.JPG)
 
 iii. Describe the key results (how well your solution performed in no more than
 a paragraph, along with your key findings, e.g. which learners performed
