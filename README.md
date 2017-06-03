@@ -26,17 +26,17 @@ Each card has 20 pictures with the same background in different orientation. The
 ![image of getting dataset](/images/image2.JPG)
 *Figure 2. The camera was fixed at a constant heigh and took pictures of every card.*
 
-[Dense SIFT (DSIFT)](http://docs.opencv.org/trunk/da/df5/tutorial_py_sift_intro.html) is used to extract the features that the model will train on for sckit-learn algorithms. The other is to preprocess the images with edge detection to use edge information of the cards as features. And pixel is used for CNN.
-
 The learners in the project are 5-Nearest Neighbor, Support Vector Machine, Neural Net algorithm with 15 layers from Scikit-Learn
-and Convolutional Neural Net algorithm from tflearn packages. 10-fold cross validation is used to verify the accuracy of the model.
+and Convolutional Neural Net algorithm(CNN) from tflearn packages. The feature used for CNN is raw data, wihle feature for other algorithms is [Dense SIFT (DSIFT)](http://docs.opencv.org/trunk/da/df5/tutorial_py_sift_intro.html)
+
+10-fold cross validation is used to verify the accuracy of the model.
 
 ### Results
 
-The accuracy of the model is around 97%, which is giving by CNN. The correspongding important feature for is only pixel. 
+The accuracy of the model is around 97%, which is giving by CNN. The correspongding important feature for is only pixel information. 
 
 ![image of card recognition](/images/Image3.JPG)
-*Figure 3. The algorithm is able to reconize every card it had learned.*
+*Figure 3. The algorithm is able to reconize every card it had learned. 10 Careds are shown to the camera with random order, from the screen we can tell the algothm works well.*
 
 ### Demo Video
 
