@@ -1,4 +1,4 @@
-# Black Jack Buddy
+# Card Classification
 ## EECS 349 Machine Learning at Northwestern University
 
 **Group Members' Github and Contact:** 
