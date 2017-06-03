@@ -39,7 +39,7 @@ and Convolutional Neural Net algorithm(CNN) from tflearn packages. The feature u
 The accuracy of the model is around 97%, which is giving by CNN. The correspongding important feature for is only pixel information. 
 
 ![image of card recognition](/images/Image3.JPG)
-*Figure 3. The algorithm is able to reconize every card it had learned. 10 Careds are shown to the camera with random order, from the screen we can tell the algothm works well.*
+*Figure 3. The algorithm is able to reconize every card it had learned. 13 Cards are shown to the camera with random order, from the screen we can tell the algothm works well.*
 
 ### Demo Video
 
