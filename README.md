@@ -14,7 +14,7 @@
 
 The objective of the card classification project is to interpret and classify cards for a game of Blackjack. The camera detects the cards  and the computer has an algorithm to classify them in real time while playing.
 
-It is interesting that we apply computer vision with machine learning on the popular gambling game and be able to do the object detection and recognition. With the computer vision skills, we can research into artificial intelligence and computers or robots that can comprehend the world around them. It is import that we can apply the skill to not only cards, but also automatic inspection, or have the computer be able to assist humans in identification tasks, etc.
+Applying computer vision with machine learning on the popular gambling game and be able to do the object detection and recognition is interesting. With the computer vision skills, we can research into artificial intelligence and computers or robots that can comprehend the world around them. It is import that we can apply the skill to not only cards, but also automatic inspection, or have the computer be able to assist humans in identification tasks, etc.
 
 ![image of Blackjack here](/images/image1.JPG)
 *Figure 1. Blackjack*
