@@ -21,10 +21,13 @@ The objective of the card classification project is to interpret and classify ca
 
 The dataset contains 10400 images of one decks of 52 cards (Ace = 1, 2 ~ 10, Jack = 11, Queen = 12, and King = 13). 
 
-Each card has 20 pictures with the same background in different orientation. Then with data augmentation, we were able to add small translation, rotation and scaling to expand the dataset to 200 pictures for each card.
-
 ![image of getting dataset](/images/image2.JPG)
 *Figure 2. The camera was fixed at a constant heigh and took pictures of every card.*
+
+Each card has 20 pictures with the same background in different orientation. Then with data augmentation, we were able to add small translation, rotation and scaling to expand the dataset to 200 pictures for each card.
+
+![image of after data augmentation](/images/image5.JPG)
+*Figure 2. After data augmentation, the dataset has been expanded to 10400 images.*
 
 The learners in the project are 5-Nearest Neighbor, Support Vector Machine, Neural Net algorithm with 15 layers from Scikit-Learn
 and Convolutional Neural Net algorithm(CNN) from tflearn packages. The feature used for CNN is raw data, wihle feature for other algorithms is [Dense SIFT (DSIFT)](http://docs.opencv.org/trunk/da/df5/tutorial_py_sift_intro.html)
