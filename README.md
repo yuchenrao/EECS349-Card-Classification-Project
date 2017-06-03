@@ -36,7 +36,7 @@ and Convolutional Neural Net algorithm from tflearn packages. 10-fold cross vali
 
 ### Results
 
-The accuracy of the model is around 97%, which is promising. Since the card "9" is still hard to recognize so far, more parameter will be tried and more testing will be taken. CNN gives the best result and the important feature is only pixel. 
+The accuracy of the model is around 97%, which is promising. To increase the accuracy, more parameters will be tried and more testing will be taken. CNN gives the best result and the important feature for CNN is only pixel. 
 
 ![image of card recognition](/images/Image3.JPG)
 *Figure 3. The algorithm is able to reconize every card it had learned.*
